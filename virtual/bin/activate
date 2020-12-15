@@ -37,7 +37,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="/home/moringa/Desktop/Moringa/Boorking/virtual"
+VIRTUAL_ENV="/home/moringa/Desktop/school-projects/core-projects/python-projects/flask/PSV-Booking/virtual"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"
