@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block container %}
+    <div class="row" xmlns="http://www.w3.org/1999/html">
+    <div class="col-lg-12 text-center">
+      <h1 class="mt-5">Booking Dashboard</h1>
+      <a href="/bookings/new">Make a booking now !</a>
+
+      {% for message in get_flashed_messages() %}
+          <div class="alert alert-warning">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            {{ message }}
+          </div>
+      {% endfor %}
+      {% if data["user_has_booking"] == True %}
+          <table class="table">
+          <thead>
+              <tr>
+                <th>Make</th>
+                <th>Model</th>
+                <th>Registration</th>
+                <th>Start</th>
+                <th>End</th>
+                <th>Modify</th>
+              </tr>
+          </thead>
+          <tbody>
+          {% for booking in data["user_bookings"] %}
+            <tr>
+                <td>{% print(booking.car.make) %}</td>
+                <td>{% print(booking.car.model) %}</td>
+                <td>{% print(booking.car.registration) %}</td>
+                <td>{% print(booking.start_time) %}</td>
+                <td>{% print(booking.end_time) %}</td>
+                <td><span class="glyphicon glyphicon-edit"></span></td>
+            </tr>
+
+          {% endfor %}
+          </tbody>
+          </table>
+
+      {% else %}
+          You currently do not have any bookings with us!<br><br>
+          <a href="/bookings/new">Make a booking now !</a>
+      {% endif %}
+    </div>
+  </div>
+{% endblock %}
