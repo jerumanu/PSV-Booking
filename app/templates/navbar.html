@@ -1,59 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title></title>
+    <nav>
+<head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="css/style.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jambo rental cars</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
+</head>
+<body>
+    <html>
+<nav>
+  <head>
+    <meta charset="utf-8">
+    <title>Jambo rental cars</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  <styles>
+  </styles>
   <body>
-    <div class="view landing">
-      <div id="overlay">
-          <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
-            <a class="navbar-brand" href="#">Jambo rental cars</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse align-items-center" id="collapsibleNavbar">
-              <ul class="navbar-nav">
-                  <li class="nav-item">
-                      <a class="nav-link" href="#overlay">Home</a>
-                    </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#make-order">Rent</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#contact">Contact Us</a>
-                </li>    
-              </ul>
-            </div>  
-          </nav>
-          <div class="mask rgba-black-light align-items-center">
-            <div class="container" id="head">
-              <div class="row">
-                <div class="col-md-12 mb-4 white-text text-center text">
-                  <h1 class="h1-reponsive white-text text-uppercase font-weight-bold mb-0 pt-md-5 pt-5 pulse"><strong>Car rental services</strong></h1>
-                  <a class="btn btn-red button floater" href="#make-order"></a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="arrow bounce"> <a href="#variety"> <img src="" width="40px"></a></div>
+    <div class="navbar navbar-inverse" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+            <div class="navbar">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" style="font-size:x-large; font-weight: bold; color:blue">JAMBO RENTAL CARS</a>
+              
       </div>
     </div>
-  </header>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li><a href="/">Home</a></li>
+         
+            <li class="nav-item">
+              <a class="nav-link nav-link-custom"href="{{ url_for('main.new_comment') }}">Feedbacks</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-link-custom"href="{{ url_for('main.all') }}"> bookings</a>
+            </li>
+            
+                  
+      </ul>
+    
 
-  <!-- slogan section -->
-  <div class="container carousel slide" data-ride="carousel"  id="slogan">
-    <div class="row">
-      <div class="col-md-12  black-text text-center text">
-          <h2>EXCLUSIVE QUALITY CARS ONLY FOR YOU</h2>
-        <p>
-        We provide quality and highly maintainable cars for our clients ,We also take the feedbacks of clients and improve on our services
-        </p>
-      </div>
+            <ul class="nav navbar-nav navbar-right">
+               {% if current_user.is_authenticated %}
+                   <li><a href="/" style="font-weight:bold;">{{current_user.username.capitalize()}} </a></li>
+                   <li><a href="{{url_for('main.profile',uname=current_user.username)}}">Profile</a></li>
+                   <li><a href="{{url_for('auth.logout')}}" style="color:blue;"><b>Sign out</b></a></li>
+               {%else%}
+                   <li><a href="{{url_for('auth.login')}}" style="color:blue;"><b>Sign in</b></a></li>
+               {%endif%}
+              
+            </ul>
+           
+       </div>
+  </div>
+</div>
+<body style="background-color: wheat;">
+  
+
+<div class="container carousel slide" data-ride="carousel"  id="slogan">
+  <div class="row">
+    <div class="col-md-12  black-text text-center text" >
+        <h2>EXCLUSIVE QUALITY CARS ONLY FOR YOU</h2>
+      <p>
+      We provide quality and highly maintainable cars for our clients ,We also take the feedbacks of clients and improve on our services
+      </p>
     </div>
   </div>
-
+</div>
+</body>
   </body>
+</nav>
 </html>
+
+

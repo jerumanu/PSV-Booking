@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% block styles%}
+{{ super() }}
+<link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
+{% endblock %}
+{% block content %}
+<body style="background-color: wheat;">
+    
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 pt-3">
+        
+        </div>
+        <div class="col-md-8">
+            {% for booking in opinion %}
+            <div class="body-content mt-3">
+                <h4 class="booking-title">{{booking.booking_title}}</h4>
+                
+                <h6 class="booking-name">Posted by ~ {{booking.username}}</h6>
+                <h5 class="subtitle"> car_type ~ {{booking.car_type}}</h5>
+                <h5 class="subtitle"> start_date_time ~ {{booking.start_date_time}}</h5>
+                <h5 class="subtitle"> end_date_time ~ {{booking.end_date_time}}</h5>
+                <h5 class="subtitle"> mobile ~ {{booking.mobile}}</h5>
+                <h5 class="subtitle"> ID_number ~ {{booking.ID_numper}}</h5>
+                <h5 class="subtitle"> payment ~ {{booking.payment}}</h5>
+
+                <img src="{{ booking.username.profile_pic_path }}" alt="">
+                <p class="date text-muted">Posted on ~ {{booking.date.strftime('%Y-%m-%d')}}</p>
+                <hr>
+                <hr>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+</body>
+{% endblock %}
