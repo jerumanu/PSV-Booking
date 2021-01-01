@@ -1,66 +1,144 @@
-{% block contents%}
 
-<!-- <div class="container"> -->
-    <div class="row">
-        <div class="card-2" style=  "flex-wrap: wrap; display: flex;">
-            <div class="col-md-3">
-            <img src="{{url_for('static', filename='/velito-iDK6fOujk-A-unsplash.jpg')}}"  width="250px" height="150px">  
-            <hr>Ferrari<hr>
+{% import 'bootstrap/wtf.html' as wtf %}
+{% extends 'base.html'%}
+
+{% block styles%} {{ super() }}
+<link rel="stylesheet" href="{{url_for('static',filename='css/styles.css')}}">
+{% endblock %}
+
+
+{% block content%}
+<body style="background-color: wheat;">
+
+    <div class="container pt-5" >
+      <div class="row pt-5" >
+        <div class="col-md-4">
+          <div class="card">
+            <img src="{{url_for('static', filename='/image/honda-civic.png')}}"  width="250px" height="150px"> 
+           <strong>
+            <hr>Honda-civic<hr>
+            <hr style="color:red;">ksh 2500per day<hr>
+            <hr style="color:red;">Discount 10%<hr>
+          </strong>
+          <button type="button" class="btn btn-outline-primary"><a href="{{ url_for('main.new_booking') }}">Request</a></button>
+
+          </div>
         </div>
-        <div class="col-md-3">
-            <img src="{{url_for('static', filename='/home/moringa/Documents/PSV-Booking/app/static/images/brandon-paul-2P9MMBx-6JY-unsplash.jpg')}}"  width="250px" height="150px"> 
-            <hr>Mercidez benz<hr>
+        <div class="col-md-4">
+          <div class="card">
+            <img src="{{url_for('static', filename='/image/hyundai-accent.png')}}"  width="250px" height="150px"> 
+            <strong>
+            <hr>Hyundai-accent<hr>
+            <hr style="color:red;">ksh 3000per day<hr>
+            <hr style="color:red;">Discount 10%<hr>
+          </strong>
+            <button type="button" class="btn btn-outline-primary"><a href="{{ url_for('main.new_booking') }}">Request</a></button>
+          </div>
         </div>
-        <div class="col-md-3">
-            <img src="{{url_for('static', filename='/velito-iDK6fOujk-A-unsplash.jpg')}}"  width="250px" height="150px"> 
-            <hr>Subaru wrx</hr>
+        <div class="col-md-4"> 
+          <div class="card">
+            <img src="{{url_for('static', filename='/image/kia-optima.png')}}"  width="250px" height="150px"> 
+           <strong>
+           
+            <hr>kia-optima<hr>
+            <hr style="color:red;">ksh 2500per day<hr>
+            <hr style="color:red;">Discount 6%<hr>
+          </strong>
+            <button type="button" class="btn btn-outline-primary"><a href="{{ url_for('main.new_booking') }}">Request</a></button>
+            </div>
+            <br>
+            <br>
         </div>
-        <div class="col-md-3"> 
-            <img src="{{url_for('static', filename='/velito-iDK6fOujk-A-unsplash.jpg')}}"  width="250px" height="150px"> 
-            <hr>van<hr>
         </div>
-        </div>
+        <div class="row" style="padding-bottom: 5%;">
+          <div class="col-md-4">
+            <div class="card">
+              <img src="{{url_for('static', filename='/image/nissan-sunny.png')}}"  width="250px" height="150px"> 
+              <strong></strong>
+              <hr>Nissan sunny<hr>
+            <hr style="color:red;">ksh 2000per day<hr>
+            <hr style="color:red;">Discount 6%<hr>
+          </strong>
+            <button type="button" class="btn btn-outline-primary"><a href="{{ url_for('main.new_booking') }}">Request</a></button>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card">
+              <img src="{{url_for('static', filename='/image/nissan-sentra.png')}}"  width="250px" height="150px"> 
+              <strong>
+              <hr>Nissan sentra<hr>
+             style="color:red;">ksh 2500per day<hr>
+            <hr style="color:red;">Discount 8%<hr>
+              </strong>
+
+            <button type="button" class="btn btn-outline-primary"><a href="{{ url_for('main.new_booking') }}">Request</a></button>
+
+            </div>
+          </div>
+          <div class="col-md-4"> 
+            <div class="card">
+              <img src="{{url_for('static', filename='/image/tucson.png')}}"  width="250px" height="150px"> 
+             <strong>
+              <hr>Nissian altima<hr>
+            <hr style="color:red;">ksh 2500per day<hr>
+            <hr style="color:red;">Discount 10%<hr>
+          </strong>
+            <button type="button" class="btn btn-outline-primary"><a href="{{ url_for('main.new_booking') }}">Request</a></button>
+            </div>
+          </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4">
+              <div class="card">
+                <div class="card-body">
+                <img src="{{url_for('static', filename='/image/honda-civic.png')}}"  width="250px" height="150px"> 
+              </div>
+              <div class="card-footer">
+
+              <strong>
+                <hr>Nissan sentra<hr>
+                <hr style="color:red;">ksh 2300per day<hr>
+                <hr style="color:red;">Discount 10%<hr>
+              </strong>
+                <button type="button" class="btn btn-outline-primary"><a href="{{ url_for('main.new_booking') }}">Request</a></button>
+              </div>
+      
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card">
+                <img src="{{url_for('static', filename='/image/Toyota-Alphard.jpg')}}"  width="250px" height="150px"> 
+                <strong>
+                <hr>Toyota Alphard<hr>
+                <hr style="color:red;">ksh 7000per day<hr>
+                <hr style="color:red;">Discount 11%<hr>
+              </strong>
+                <button type="button" class="btn btn-outline-primary"><a href="{{ url_for('main.new_booking') }}">Request</a></button>
+    
+              </div>
+            </div>
+            <div class="col-md-4"> 
+              <div class="card">
+                <img src="{{url_for('static', filename='/image/toyota-coaster.png')}}"  width="250px" height="150px"> 
+                <strong>
+                <hr>Toyota coaster<hr>
+                <hr style="color:red;">ksh 600per day<hr>
+                <hr style="color:red;">Discount 15%<hr>
+              </strong>
+                <button type="button" class="btn btn-outline-primary"><a href="{{ url_for('main.new_booking') }}">Request</a></button>
+    
+              </div>
+            </div>
+            </div>
     </div>   
-    <div class="card-2" style=  "flex-wrap: wrap; display: flex;">
-      <div class="col-md-3">
-      <img src="{{url_for('static', filename='/velito-iDK6fOujk-A-unsplash.jpg')}}"  width="250px" height="150px">  
-      <hr>Ferrari<hr>
-  </div>
-  <div class="col-md-3">
-      <img src="{{url_for('static', filename='/velito-iDK6fOujk-A-unsplash.jpg')}}"  width="250px" height="150px"> 
-      <hr>Subaro wrx<hr>
-  </div>
-  <div class="col-md-3">
-      <img src="{{url_for('static', filename='/velito-iDK6fOujk-A-unsplash.jpg')}}"  width="250px" height="150px"> 
-      <hr>mercidez benz</hr>
-  </div>
-  <div class="col-md-3"> 
-      <img src="{{url_for('static', filename='/velito-iDK6fOujk-A-unsplash.jpg')}}" width="250px" height="150px"> 
-      <hr>Ferrari<hr>
-  </div>
-  </div> 
-  <div class="card-2" style=  "flex-wrap: wrap; display: flex;">
-    <div class="col-md-3">
-    <img src="{{url_for('static', filename='/velito-iDK6fOujk-A-unsplash.jpg')}}"  width="250px" height="150px">  
-    <hr>subaru wrx<hr>
-</div>
-<div class="col-md-3">
-    <img src="{{url_for('static', filename='/velito-iDK6fOujk-A-unsplash.jpg')}}" width="250px" height="150px"> 
-    <hr>Ferrari<hr>
-</div>
-<div class="col-md-3">
-    <img src="{{url_for('static', filename='/velito-iDK6fOujk-A-unsplash.jpg')}}"  width="250px" height="150px"> 
-    <hr>Subaru wrx</hr>
-</div>
-<div class="col-md-3"> 
-    <img src="{{url_for('static', filename='/velito-iDK6fOujk-A-unsplash.jpg')}}"  width="250px" height="150px"> 
-    <hr>van<hr>
-</div>
-    </div>    
+    
+  </body>
+  <br> <br>
+  
   <!-- Footer -->
-<footer class="page-footer font-small blue-grey lighten-5">
+<footer class="page-footer font-small blue-grey lighten-5 bm-5" style="background-color: black;">
 
-<div style="background-color: #21d192;">
+<div style="background-color:black;">
   <div class="container">
 
     <!-- Grid row-->
@@ -117,10 +195,7 @@
       <!-- Content -->
       <h6 class="text-uppercase font-weight-bold">Jambo rental cars</h6>
       <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-      <p>Here you can use rows and columns to organize your footer content. Lorem ipsum dolor sit amet,
-        consectetur
-        adipisicing elit.</p>
-
+      
     </div>
     <!-- Grid column -->
 
@@ -131,16 +206,16 @@
       <h6 class="text-uppercase font-weight-bold">Products</h6>
       <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
       <p>
-        <a class="dark-grey-text" href="#!">MDBootstrap</a>
+        <a class="dark-grey-text" href="#!">vans</a>
       </p>
       <p>
-        <a class="dark-grey-text" href="#!">MDWordPress</a>
+        <a class="dark-grey-text" href="#!">Tracks</a>
       </p>
       <p>
-        <a class="dark-grey-text" href="#!">BrandFlow</a>
+        <a class="dark-grey-text" href="#!">Mercezed</a>
       </p>
       <p>
-        <a class="dark-grey-text" href="#!">Bootstrap Angular</a>
+        <a class="dark-grey-text" href="#!">limousine</a>
       </p>
 
     </div>
@@ -175,13 +250,13 @@
       <h6 class="text-uppercase font-weight-bold">Contact</h6>
       <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
       <p>
-        <i class="fas fa-home mr-3"></i> New York, NY 10012, US</p>
+        <i class="fas fa-home mr-3"></i> Nairobi,parkland </p>
       <p>
-        <i class="fas fa-envelope mr-3"></i> info@example.com</p>
+        <i class="fas fa-envelope mr-3"></i> jamborentalcars@gmail.com</p>
       <p>
-        <i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>
+        <i class="fas fa-phone mr-3"></i>  07 234 567 88</p>
       <p>
-        <i class="fas fa-print mr-3"></i> + 01 234 567 89</p>
+        <i class="fas fa-print mr-3"></i>  07 234 567 89</p>
 
     </div>
     <!-- Grid column -->
@@ -194,11 +269,11 @@
 
 <!-- Copyright -->
 <div class="footer-copyright text-center text-black-50 py-3">© 2020 Copyright:
-  <a class="dark-grey-text" href="https://mdbootstrap.com/"> MDBootstrap.com</a>
+  <a class="dark-grey-text" href="https://mdbootstrap.com/"> jambocarrent.com</a>
 </div>
 <!-- Copyright -->
 
 </footer>
 <!-- Footer -->
   </div>
-{%endblock%}
+{% endblock %}
